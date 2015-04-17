@@ -22,7 +22,8 @@ class UserTableSeeder extends Seeder {
                 'uuid'       => \Uuid::generate(),
                 'email'      => $fake->unique()->email,
                 'password'   => Hash::make('secret'),
-                'type'       => $fake->randomElement($array = array ('user','admin','root'))
+                'type'       => $fake->randomElement($array = array ('user','admin','root')),
+                'active'     => true
             ));
         }
     }

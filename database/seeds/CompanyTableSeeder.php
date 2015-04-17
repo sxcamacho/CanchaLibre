@@ -22,7 +22,8 @@ class CompanyTableSeeder extends Seeder {
                 'phone_number'  => $fake->phoneNumber,
                 'state'         => 1,
                 'city'          => 1,
-                'location'      => $fake->latitude . ' ' . $fake->longitude
+                'location'      => $fake->latitude . ' ' . $fake->longitude,
+                'active'        => true
             ));
         }
     }

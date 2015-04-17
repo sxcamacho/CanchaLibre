@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompaniesTable extends Migration {
+class CreateFieldsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,16 +12,13 @@ class CreateCompaniesTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('companies', function(Blueprint $table)
+        Schema::create('fields', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('uuid', 36);
-            $table->string('name');
-            $table->string('address');
-            $table->string('phone_number');
-            $table->integer('state');
-            $table->integer('city');
-            $table->string('location');
+            $table->integer('company_id');
+            $table->string('title');
+            $table->string('description');
             $table->boolean('active');
             $table->timestamps();
         });
@@ -34,7 +31,7 @@ class CreateCompaniesTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('companies');
+        Schema::drop('fields');
 	}
 
 }
